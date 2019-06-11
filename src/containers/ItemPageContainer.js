@@ -4,11 +4,6 @@ import * as action from './../actions/ItemPageActions';
 import {connect} from 'react-redux';
 
 class ItemPageContainer extends Component {
-    componentDidMount() {
-        this
-            .props
-            .getPagePagination(1) 
-    }
 
     render() {
         return (
@@ -20,7 +15,8 @@ class ItemPageContainer extends Component {
 const mapStateToProps= (state)=>{
     return {
         items: state.items.listItem,
-        page:state.page
+        page:state.page,
+        valueSearch:state.valueSearch.valueSearch
     }
 }
 const mapDispatchToProps =(dispatch)=>{

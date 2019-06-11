@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {searchItem} from './../actions/ItemPageActions';
+import * as action from './../actions/ItemPageActions';
 import SearchItem from '../components/searchItem';
 
 function mapDispatchToProps(dispatch) {
     return {
-        searchItem:(payload)=>dispatch(searchItem(payload)) 
+        getListItem:(payload)=>dispatch(action.getListItem(payload)),
+        getValueSearch:(payload)=>dispatch(action.getValueSearch(payload)),
+        getAllItems:(payload)=>dispatch(action.getAllItems(payload)),
+        getActivePageToDefault :()=>dispatch(action.getActivePageToDefault())
     };
 }
 

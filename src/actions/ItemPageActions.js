@@ -22,8 +22,8 @@ export function searchItem(payload) {
 export function getNumberPage(payload) {
     return ({type: type.GET_NUMBER_PAGE, payload})
 }
-export function getAllItems() {
-    return ({type: type.GET_ALL_ITEM_REQUEST})
+export function getAllItems(payload) {
+    return ({type: type.GET_ALL_ITEM_REQUEST,payload})
 }
 
 export function changeActivePage(payload) {
@@ -33,4 +33,6 @@ export function getActivePageToDefault() {
     return ({type: type.GET_ACTIVE_PAGE_TO_DEFAULT})
 }
 
-
+export function getValueSearch(payload) {   
+    return ({type: type.GET_VALUE_SEARCH,payload})
+}

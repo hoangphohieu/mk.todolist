@@ -6,13 +6,14 @@ function mapDispatchTopProps(dispatch) {
       return {
             getPagePagination: (param)=>dispatch(action.getListItem(param)),
             getNumberPage: (param)=> dispatch(action.getNumberPage(param)),
-            getAllItems:()=>dispatch(action.getAllItems()),
+            getAllItems:(param)=>dispatch(action.getAllItems(param)),
             changeActive:(param)=>dispatch(action.changeActivePage(param))
       };
 }
 function mapStateToProps(state) {
       return {
-            totalPage:state.totalPage
+            totalPage:state.totalPage,
+            search:state.valueSearch
       };
 }
 

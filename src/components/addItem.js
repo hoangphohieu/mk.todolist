@@ -6,7 +6,8 @@ class AddItem extends Component {
         super(props, context);
         this.state = {
             name: "",
-            isDone: false
+            isDone: false,
+            valueSearch:null
         }
     }
     addItem = (payload) => {

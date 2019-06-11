@@ -3,13 +3,16 @@ import ItemPagination from './itemPagination';
 class Pagination extends Component {
     
     componentDidMount() {
-        this.props.getAllItems();
+        this.props.getAllItems({valueSearch:null});
+        this.props.getPagePagination({ 
+            activePage: 1,
+             valueSearch: null
+        });
     }
  
     render() {
        const  {totalPage,activePage}=this.props.totalPage;
-       
-       
+
         return (
             <div>
                 <nav aria-label="Page navigation example">

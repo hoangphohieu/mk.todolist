@@ -7,8 +7,15 @@ class SearchItem extends Component {
             name: null
         }
     }
-    getName = (e) => {
-        this.setState({name: e.target.value})
+
+    getName = (e) => { 
+        this.setState({name: e.target.value});
+    }
+    searchItem =()=>{
+        this.props.getValueSearch(this.state.name); // dua value len reducer
+        this.props.getListItem({activePage:1,valueSearch:this.state.name}) // get len api
+        this.props.getAllItems({valueSearch:this.state.name}); // get all item để tính số page search
+        this.props.getActivePageToDefault();// chuyển active page về 1
     }
     render() {
         return (
@@ -27,7 +34,7 @@ class SearchItem extends Component {
                             className="btn btn-outline-primary"
                             type="button"
                             id="button-addon2"
-                            onClick={() => this.props.searchItem(this.state.name)}>Button</button>
+                            onClick={this.searchItem }>Button</button>
                     </div>
                 </div>
             </div>

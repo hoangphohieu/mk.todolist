@@ -2,11 +2,12 @@ import {put,takeEvery} from 'redux-saga/effects';
 import getAllItemsAPI from './../fetchAPI/getAllItemsAPI';
 import * as type  from './../constant';
 
-function* getTotalPage(params) {
-
+function* getTotalPage(param) {
+    console.log(param);
+    
     try {
 
-        const res= yield getAllItemsAPI();
+        const res= yield getAllItemsAPI(param);
         yield put({
             type:type.GET_ALL_ITEM_SUCSESS,
             payload: res

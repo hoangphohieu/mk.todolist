@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 class Items extends Component {
 
     render() {
-        let {page,items}=this.props;
+        let {page,items,valueSearch}=this.props;
         
         let listData = [];
         if (items) {
@@ -20,15 +20,15 @@ class Items extends Component {
                                         (item.isDone)
                                             ? "btn-primary "
                                             : "btn-danger "
-                                    ) + "mr-1"} onClick={() => this.props.doIsDone({id:item.id,page:page})}>V</button>
+                                    ) + "mr-1"} onClick={() => this.props.doIsDone({id:item.id,page,valueSearch})}>V</button>
                                 <button
                                     type="button"
                                     className="btn btn-danger ml-1"
-                                    onClick={() => this.props.deleteItem({id:item.id,page:page})}>X</button>
+                                    onClick={() => this.props.deleteItem({id:item.id,page,valueSearch})}>X</button>
                             </td>
                         </tr>
                     )
-                })
+                }) 
         }
         return (
             <React.Fragment>
